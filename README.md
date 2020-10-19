@@ -61,7 +61,7 @@ A ideia por trás desta distinção é que é um endereço para o qual você pod
 - ```balance```
 - ```transfer```
 
-- É possível consultar o saldo de um endereço usando a propriedade ```balance```  e enviar Éter (em unidades de wei) para um endereço de pagamento usando a ```transfer```.
+- É possível consultar o saldo de um endereço usando a propriedade ```balance```  e enviar Éther (em unidades de wei) para um endereço de pagamento usando a ```transfer```.
 
 
 ### Literais e tipos de string
@@ -76,8 +76,33 @@ A ideia por trás desta distinção é que é um endereço para o qual você pod
 
 #### Literais hexadecimais
 
-- Literais hexadecimais são prefixados com a palavra-chave hexe colocados entre aspas duplas ou simples ( ```hex"001122FF"```, ```hex'0011_22_FF'``` ). Seu conteúdo deve ser de dígitos hexadecimais que podem, opcionalmente, usar um único sublinhado como separador entre os limites de byte. O valor do literal será a representação bin ária da sequência hexadecimal.
+- Literais hexadecimais são prefixados com a palavra-chave hexe colocados entre aspas duplas ou simples  ( ```hex"001122FF"```, ```hex'0011_22_FF'``` ). Seu conteúdo deve ser de dígitos hexadecimais que podem, opcionalmente, usar um único sublinhado como separador entre os limites de byte. O valor do literal será a representação bin ária da sequência hexadecimal.
 
 
+### Tipos de Função
 
+- Os tipos de função são os tipos de funções. Variáveis ​​de tipo de função podem ser atribuídas a partir de funções e parâmetros de função de tipo de função podem ser usados ​​para passar funções e retornar funções de chamadas de função. São dois os tipos de função - **funções internas** e **externas** :
 
+- As **funções internas** só podem ser chamadas dentro do contrato atual (mais especificamente, dentro da unidade de código atual, que também inclui funções de biblioteca interna e funções herdadas) porque não podem ser executadas fora do contexto do contrato atual.
+
+- As **funções externas** consistem em um endereço e uma assinatura de função e podem ser transmitidas e retornadas por chamadas de funções externas.
+
+- Os tipos de função são notados da seguinte forma:
+
+```function``` (<parameter types>) {```internal``` | ```external```} [```pure``` | ```view``` ```payable```] [```returns``` (<return types>)]
+
+##### Conversões:
+
+- ```pure``` : funções podem ser convertidas em funções ```view``` e ```non-payable```
+- ```view``` : funções podem ser convertidas em ```non-payable``` funções
+- ```payable``` : funções podem ser convertidas em ```non-payable```  funções
+
+### Tipos de Referência
+
+- Os valores do tipo de referência podem ser modificados por meio de vários nomes diferentes. Compare isso com os tipos de valor onde você obtém uma cópia independente sempre que uma variável do tipo de valor é usada. Por causa disso, os tipos de referência devem ser tratados com mais cuidado do que os tipos de valor. Atualmente, os tipos de referência incluem estruturas, matrizes e mapeamentos. Se você usar um tipo de referência, você sempre terá que fornecer explicitamente a área de dados onde o tipo está armazenado:
+
+- ```memory``` : cujo tempo de vida é limitado a uma chamada de função externa
+
+- ```storage``` :o local onde as variáveis ​​de estado são armazenadas, onde o tempo de vida é limitado a o tempo de vida de um contrato.
+
+- ```calldata``` : localização de dados especiais que contém os argumentos da função.
