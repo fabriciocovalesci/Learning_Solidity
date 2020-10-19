@@ -30,11 +30,11 @@ contract HelloWorld {
 
 Operadores:
 
-```!```  (negação lógica)
-```&&```  (conjunção lógica, “e”)
-```||``` (disjunção lógica, “ou”)
-```==```  (igualdade)
-```!=``` (desigualdade)
+- ```!```  (negação lógica)
+- ```&&```  (conjunção lógica, “e”)
+- ```||``` (disjunção lógica, “ou”)
+- ```==```  (igualdade)
+- ```!=``` (desigualdade)
 
 
 ### Inteiros
@@ -48,14 +48,18 @@ Operadores:
 
 - O tipo de endereço são basicamente idênticos:
 
-```address```: Contém um valor de 20 bytes (tamanho de um endereço Ethereum)
-```address payable```: O mesmo que ```address```, mas com os membros adicionais ```transfer```
+- ```address```: Contém um valor de 20 bytes (tamanho de um endereço Ethereum)
+
+- ```address payable```: O mesmo que ```address```, mas com os membros adicionais ```transfer```
   e ```send```. 
 
 A ideia por trás desta distinção é que é um endereço para o qual você pode enviar Ether, enquanto um simples não pode ser enviado Ether. ```address payable``` e ```address```
 
 
 ### Membros de endereços
+
+- ```balance```
+- ```transfer```
 
 - É possível consultar o saldo de um endereço usando a propriedade ```balance```  e enviar Éter (em unidades de wei) para um endereço de pagamento usando a ```transfer```.
 
@@ -72,7 +76,7 @@ A ideia por trás desta distinção é que é um endereço para o qual você pod
 
 #### Literais hexadecimais
 
-- Literais hexadecimais são prefixados com a palavra-chave hexe colocados entre aspas duplas ou simples ( ```hex"001122FF"```, ```hex'0011_22_FF'``` ). Seu conteúdo deve ser de dígitos hexadecimais que podem, opcionalmente, usar um único sublinhado como separador entre os limites de byte. O valor do literal será a representação binária da sequência hexadecimal.
+- Literais hexadecimais são prefixados com a palavra-chave hexe colocados entre aspas duplas ou simples ( ```hex"001122FF"```, ```hex'0011_22_FF'``` ). Seu conteúdo deve ser de dígitos hexadecimais que podem, opcionalmente, usar um único sublinhado como separador entre os limites de byte. O valor do literal será a representação bin ária da sequência hexadecimal.
 
 
 
