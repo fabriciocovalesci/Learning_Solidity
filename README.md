@@ -89,7 +89,7 @@ A ideia por trás desta distinção é que é um endereço para o qual você pod
 
 - Os tipos de função são notados da seguinte forma:
 
-```function``` (<parameter types>) {```internal``` | ```external```} [```pure``` | ```view``` ```payable```] [```returns``` (<return types>)]
+```function``` (```<parameter types>```) {```internal``` | ```external```} [```pure``` | ```view``` ```payable```] [```returns``` ```(<return types>)```]
 
 ##### Conversões:
 
