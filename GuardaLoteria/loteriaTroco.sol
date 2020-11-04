@@ -17,7 +17,7 @@ contract Sorteia_com_Troco {
             contador = 1;
 
             if(msg.sender.balance > 20 ether){
-                donoRico = true
+                donoRico = true;
             }
             else {
                 donoRico = false;
